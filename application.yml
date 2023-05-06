@@ -1,12 +1,15 @@
 spring :
-      cloud:
-        config:
-          server:
-            native:
-              search-locations: classpath:/shared 
-      profiles:
-         active: native
-      application:
-     name: config-server
-server:
-  port: 8769
+    profiles:
+        active: dev
+
+---
+spring:
+    profiles: dev
+    application:
+        name: springcloud-config-dev
+        
+---
+spring:
+    profiles: test
+    application:
+        name: springcloud-config-test
